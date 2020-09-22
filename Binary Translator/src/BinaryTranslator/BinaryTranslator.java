@@ -38,7 +38,7 @@ public class BinaryTranslator {
 			int number = Integer.parseInt(numberInput);
 			while (number > 0) {
 				if (number % 2 == 1) {
-					answer = "1" + answer; 
+					answer = "1" + answer;  
 				} 
 				else {
 					answer = "0" + answer;
