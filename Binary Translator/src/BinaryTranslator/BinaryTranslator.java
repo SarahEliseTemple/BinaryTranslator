@@ -15,6 +15,7 @@ public class BinaryTranslator {
 				System.out.println("Enter your file name");
 				input = scanner.nextLine();
 				Scanner fileScanner = new Scanner(new File(input));
+				numberInput = fileScanner.nextLine();
 			} catch (IOException ex) {
 				System.out.println("File not found.");
 				scanner.close();
@@ -28,7 +29,31 @@ public class BinaryTranslator {
 		else {
 			System.out.println("Please type file or input.");
 		}
-		System.out.println(numberInput);
+		System.out.println(numberInput); 
+		System.out.println("If you are translating from decimal to binary, type \"dtb\"");
+		System.out.println("If you are translating from binary to decimal type \"btd\"");
+		input = scanner.nextLine();
+		if (input.equals("dtb")) {// decimal to binary
+			String answer = "";  
+			int number = Integer.parseInt(numberInput);
+			while (number > 0) {
+				if (number % 2 == 1) {
+					answer = "1" + answer; 
+				}
+				number = number/2;
+			}
+		}
+		else if (input.equals("btd") ) {
+			int answer = 0;
+			for (int a = numberInput.length() - 1; a <= 0; a--) {
+				if (numberInput.charAt(a) == '1');
+				answer = answer + (int)(Math.pow(2, a));
+			}
+		}
+		else {
+			System.out.println("Please redo the program and type dtb or btd.");
+		}
+		
 		scanner.close();
 	}
 	
