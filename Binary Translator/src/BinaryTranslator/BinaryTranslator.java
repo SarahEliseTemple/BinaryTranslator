@@ -22,7 +22,7 @@ public class BinaryTranslator {
 				System.exit(1); 
 			}
 		}
-		else if (input.equals("input")) { //access to the consule
+		else if (input.equals("input")) { //access to the console
 			numberInput = scanner.nextLine();
 		}
 		
@@ -39,7 +39,7 @@ public class BinaryTranslator {
 			while (number > 0) {
 				if (number % 2 == 1) {
 					answer = "1" + answer; 
-				}
+				} 
 				number = number/2;
 			}
 		}
