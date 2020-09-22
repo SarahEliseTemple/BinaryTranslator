@@ -40,20 +40,29 @@ public class BinaryTranslator {
 				if (number % 2 == 1) {
 					answer = "1" + answer; 
 				} 
+				else {
+					answer = "0" + answer;
+				}
 				number = number/2;
 			}
+			System.out.println(answer);
+
 		}
-		else if (input.equals("btd") ) {
+		else if (input.equals("btd") ) {//binary to decimal
 			int answer = 0;
 			for (int a = numberInput.length() - 1; a <= 0; a--) {
-				if (numberInput.charAt(a) == '1');
+				if (numberInput.charAt(a) == '1'); {
 				answer = answer + (int)(Math.pow(2, a));
+				}
+				if (numberInput.charAt(a) == '0');{
+				}
 			}
+			
+			System.out.println(answer);
 		}
 		else {
 			System.out.println("Please redo the program and type dtb or btd.");
 		}
-		
 		scanner.close();
 	}
 	
