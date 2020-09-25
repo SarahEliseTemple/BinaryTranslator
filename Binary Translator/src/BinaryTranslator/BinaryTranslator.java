@@ -2,7 +2,11 @@ package BinaryTranslator;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.File;
-
+/*Name: Sarah Temple
+ * Date: September 25, 2020
+ * Info about the project: This is a binary Translator that will translate from decimals to binary and vice versa.
+ * I got help from Ryan Bae over discord. We were both struggling and we helped each other understand it better by talking through it.
+ */
 public class BinaryTranslator {
 
 	public BinaryTranslator() {
@@ -16,7 +20,7 @@ public class BinaryTranslator {
 				input = scanner.nextLine();
 				Scanner fileScanner = new Scanner(new File(input));
 				numberInput = fileScanner.nextLine();
-			} catch (IOException ex) {
+			} catch (IOException ex) { // This will print when the computer cannot find the file
 				System.out.println("File not found.");
 				scanner.close();
 				System.exit(1); 
@@ -49,20 +53,26 @@ public class BinaryTranslator {
 
 		}
 		
-		else if (input.equals("btd") ) {//binary to decimal
-				int answer = 0;
-	            for (int a = numberInput.length()-1; a >= 0; a--) {
-	                if (numberInput.charAt(a) == '1') {
-	                    answer = answer + (int)(Math.pow(2, a));
-	                    System.out.println(a);
+		else {//binary to decimal
+				int answer = 0;//this is the answer
+				int charNum = 0;//this is the digit that we are working with at the moment
+				int expoNum = numberInput.length() - 1;//this is the number 2 is to the power of to convert to a decimal
+	            for (int a = numberInput.length()-1; a >= charNum; charNum++) {
+	                if (numberInput.charAt(charNum) == '1') {//if charNum is 1 than we run these
+	                    answer = answer + (int)(Math.pow(2, expoNum));//This is where its put to the power of
+	                    //System.out.println("This is the number of digits - 1:"+a);
+	                    //System.out.println("This is the character Number:"+charNum);
+	                    //System.out.println("This is the number of exponents"+ expoNum);
 	                }
-	              
+	                else if (numberInput.charAt(charNum) == '0') {
+	                	 //System.out.println("This is a zero: " + charNum);
+	                }
+	                expoNum--;
 	            }
+	            System.out.println("This is the answer:"+answer);
+	              
+		}
 	            //System.out.println(answer);
-		}
-		else {
-			System.out.println("Please redo the program and type dtb or btd.");
-		}
 		scanner.close();
 	}
 	
