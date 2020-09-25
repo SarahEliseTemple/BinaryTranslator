@@ -69,7 +69,7 @@ public class BinaryTranslator {
 	                }
 	                expoNum--;
 	            }
-	            System.out.println("This is the answer:"+answer);
+	            System.out.println("This is the answer: "+answer);
 	              
 		}
 	            //System.out.println(answer);
