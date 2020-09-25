@@ -48,17 +48,17 @@ public class BinaryTranslator {
 			System.out.println(answer);
 
 		}
+		
 		else if (input.equals("btd") ) {//binary to decimal
-			int answer = 0;
-			for (int a = numberInput.length() - 1; a <= 0; a--) {
-				if (numberInput.charAt(a) == '1'); {
-				answer = answer + (int)(Math.pow(2, a));
-				}
-				if (numberInput.charAt(a) == '0');{
-				}
-			}
-			
-			System.out.println(answer);
+				int answer = 0;
+	            for (int a = numberInput.length()-1; a >= 0; a--) {
+	                if (numberInput.charAt(a) == '1') {
+	                    answer = answer + (int)(Math.pow(2, a));
+	                    System.out.println(a);
+	                }
+	              
+	            }
+	            //System.out.println(answer);
 		}
 		else {
 			System.out.println("Please redo the program and type dtb or btd.");
